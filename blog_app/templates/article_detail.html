@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>
+        {%block title%}
+            {{post.title_tag}}
+        {%endblock%}
+    </title> -->
+</head>
+<body>
+    {%block content%}
+
+    <h1>{{post.title}}</h1>
+    {{post.post_date}}
+    <hr>
+    <small>
+    By:- {{post.author.first_name}} {{post.author.last_name}}
+    <hr>
+    <small><a href="{% url 'update_post' post.pk %}">(Edit)</a></small>
+    <small><a href="{% url 'delete_post' post.pk %}">(Delete)</a></small>
+
+    {{post.body}}
+
+    </small>
+    <br>
+    {%endblock%}
+</body>
+</html>
+
+
+
+
+
+
+ 
